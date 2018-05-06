@@ -28,8 +28,8 @@ public class CustomerTest {
     @Test
     public void statement(){
         String expected = "Rental Record for "+name+"\n" +
-        "\tTitle\t\tDays\tAmount\n" +
-                "\t"+movie.getTitle()+"\t\t"+rental.getDaysRented()+"\t12.0\n" +
+        "\tTitle\tDays\tAmount\n" +
+                "\t"+movie.getTitle()+"\t"+rental.getDaysRented()+"\t12.0\n" +
                 "Amount owed is 12.0\n" +
                 "You earned 2 frequent renter points";
 
