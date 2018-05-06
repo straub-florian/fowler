@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 public class RentalTest {
 
+    public static final int DAYS_RENTED_ONE = 1;
     public static final int DAYS_RENTED = 4;
 
     private Movie movie;
@@ -47,5 +48,20 @@ public class RentalTest {
         assertEquals(12d, actual, 0);
     }
 
+    @Test
+    public void getFrequentRenterPointsOne(){
+        movie.setPriceCode(Movie.NEW_RELEASE);
+        rental = new Rental(movie, DAYS_RENTED_ONE);
+        int actual = rental.getFrequentRenterPoints();
+        assertEquals(1, actual);
+    }
+
+    @Test
+    public void getFrequentRenterPointsTwo(){
+        movie.setPriceCode(Movie.NEW_RELEASE);
+        rental = new Rental(movie, DAYS_RENTED);
+        int actual = rental.getFrequentRenterPoints();
+        assertEquals(2, actual);
+    }
 
 }
