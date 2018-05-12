@@ -16,54 +16,30 @@ public class MovieTest {
 
     @Test
     public void getPriceCode() {
+        movie.setPriceCode(Movie.REGULAR);
         assertEquals(movie.getPriceCode(), Movie.REGULAR);
     }
 
     @Test
-    public void setPriceCode() {
-        movie.setPriceCode(Movie.CHILDRENS);
-        assertEquals(movie.getPriceCode(), Movie.CHILDRENS);
+    public void setPriceCodeChildren() {
+        movie.setPriceCode(Movie.CHILDREN);
+        assertEquals(movie.getPriceCode(), Movie.CHILDREN);
+    }
+
+    @Test
+    public void setPriceCodeNewRelease() {
+        movie.setPriceCode(Movie.NEW_RELEASE);
+        assertEquals(movie.getPriceCode(), Movie.NEW_RELEASE);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void setPriceCodeIllegalArgument() {
+        movie.setPriceCode(-1);
     }
 
     @Test
     public void getTitle() {
         assertEquals(movie.getTitle(), MOVIE_TITLE);
     }
-
-    @Test
-    public void chargeAmountRegular() {
-        movie.setPriceCode(Movie.REGULAR);
-        double actual = movie.getCharge(RentalTest.DAYS_RENTED);
-        assertEquals(5d, actual, 0);
-    }
-
-    @Test
-    public void chargeAmountChildren() {
-        movie.setPriceCode(Movie.CHILDRENS);
-        double actual = movie.getCharge(RentalTest.DAYS_RENTED);
-        assertEquals(3d, actual, 0);
-    }
-
-    @Test
-    public void chargeAmountNewRelease() {
-        movie.setPriceCode(Movie.NEW_RELEASE);
-        double actual = movie.getCharge(RentalTest.DAYS_RENTED);
-        assertEquals(12d, actual, 0);
-    }
-
-    @Test
-    public void getFrequentRenterPointsOne() {
-        movie.setPriceCode(Movie.NEW_RELEASE);
-        int actual = movie.getFrequentRenterPoints(RentalTest.DAYS_RENTED_ONE);
-        assertEquals(1, actual);
-    }
-
-    @Test
-    public void getFrequentRenterPointsTwo() {
-        movie.setPriceCode(Movie.NEW_RELEASE);
-        int actual = movie.getFrequentRenterPoints(RentalTest.DAYS_RENTED);
-        assertEquals(2, actual);
-    }
-
 
 }
