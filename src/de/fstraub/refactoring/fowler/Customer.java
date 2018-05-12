@@ -1,14 +1,15 @@
+package de.fstraub.refactoring.fowler;
 
-import java.lang.*;
-import java.util.*;
+import java.util.Enumeration;
+import java.util.Vector;
 
-class Customer {
+public class Customer {
 
     private String name;
-    private Vector _rentals = new Vector();
+    private Vector<Rental> _rentals = new Vector<>();
 
-    public Customer(String newname) {
-        name = newname;
+    public Customer(String name) {
+        this.name = name;
     }
 
     public void addRental(Rental arg) {
@@ -20,10 +21,10 @@ class Customer {
     }
 
     public String statement() {
-        Enumeration rentals = _rentals.elements();
-        String result = "Rental Record for " + getName() + "\n" + "\tTitle\tDays\tAmount\n";
+        Enumeration<Rental> rentals = _rentals.elements();
+        String result = "de.fstraub.refactoring.fowler.Rental Record for " + getName() + "\n" + "\tTitle\tDays\tAmount\n";
         while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
+            Rental each = rentals.nextElement();
             //show figures for this rental
             result += "\t" + each.getMovie().getTitle() + "\t"
                     + String.valueOf(each.getDaysRented()) + "\t"
@@ -40,9 +41,9 @@ class Customer {
 
     private double getTotalCharge() {
         double result = 0;
-        Enumeration rentals = _rentals.elements();
+        Enumeration<Rental> rentals = _rentals.elements();
         while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
+            Rental each = rentals.nextElement();
             result += each.getCharge();
         }
         return result;
@@ -50,9 +51,9 @@ class Customer {
 
     private int getTotalFrequentRenterPoints() {
         int result = 0;
-        Enumeration rentals = _rentals.elements();
+        Enumeration<Rental> rentals = _rentals.elements();
         while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
+            Rental each = rentals.nextElement();
             result += each.getFrequentRenterPoints();
         }
         return result;

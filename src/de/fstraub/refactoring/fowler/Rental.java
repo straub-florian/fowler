@@ -1,4 +1,6 @@
-class Rental {
+package de.fstraub.refactoring.fowler;
+
+public class Rental {
 
     private Movie movie;
     private int daysRented;
@@ -20,7 +22,7 @@ class Rental {
         return movie.getFrequentRenterPoints(daysRented);
     }
 
-    double getCharge(){
+    double getCharge() {
         return movie.getCharge(daysRented);
     }
 }

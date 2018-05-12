@@ -1,3 +1,10 @@
+package de.fstraub.refactoring.fowler;
+
+import de.fstraub.refactoring.fowler.price.ChildrenPrice;
+import de.fstraub.refactoring.fowler.price.NewReleasePrice;
+import de.fstraub.refactoring.fowler.price.Price;
+import de.fstraub.refactoring.fowler.price.RegularPrice;
+
 public class Movie {
 
     public static final int CHILDREN = 2;
@@ -22,7 +29,7 @@ public class Movie {
                 price = new RegularPrice();
                 break;
             case CHILDREN:
-                price = new ChildrensPrice();
+                price = new ChildrenPrice();
                 break;
             case NEW_RELEASE:
                 price = new NewReleasePrice();
@@ -41,6 +48,6 @@ public class Movie {
     }
 
     int getFrequentRenterPoints(int daysRented) {
-       return price.getFrequentRenterPoints(daysRented);
+        return price.getFrequentRenterPoints(daysRented);
     }
 }

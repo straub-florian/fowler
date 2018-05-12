@@ -1,3 +1,6 @@
+package de.fstraub.refactoring.fowler;
+
+import de.fstraub.refactoring.fowler.Movie;
 import org.junit.Before;
 import org.junit.Test;
 

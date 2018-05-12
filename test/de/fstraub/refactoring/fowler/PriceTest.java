@@ -1,4 +1,9 @@
-import org.junit.Before;
+package de.fstraub.refactoring.fowler;
+
+import de.fstraub.refactoring.fowler.price.ChildrenPrice;
+import de.fstraub.refactoring.fowler.price.NewReleasePrice;
+import de.fstraub.refactoring.fowler.price.Price;
+import de.fstraub.refactoring.fowler.price.RegularPrice;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -16,7 +21,7 @@ public class PriceTest {
 
     @Test
     public void chargeAmountChildren() {
-        price = new ChildrensPrice();
+        price = new ChildrenPrice();
         double actual = price.getCharge(RentalTest.DAYS_RENTED);
         assertEquals(3d, actual, 0);
     }

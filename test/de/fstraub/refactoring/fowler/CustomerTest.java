@@ -1,4 +1,5 @@
-import org.junit.After;
+package de.fstraub.refactoring.fowler;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,7 +28,7 @@ public class CustomerTest {
 
     @Test
     public void statement(){
-        String expected = "Rental Record for "+name+"\n" +
+        String expected = "de.fstraub.refactoring.fowler.Rental Record for "+name+"\n" +
         "\tTitle\tDays\tAmount\n" +
                 "\t"+movie.getTitle()+"\t"+rental.getDaysRented()+"\t12.0\n" +
                 "Amount owed is 12.0\n" +

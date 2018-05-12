@@ -1,5 +1,8 @@
-import java.lang.*;
-import java.util.*;
+package de.fstraub.refactoring.fowler;
+
+import de.fstraub.refactoring.fowler.Customer;
+import de.fstraub.refactoring.fowler.Movie;
+import de.fstraub.refactoring.fowler.Rental;
 
 /**
  * Note that Java console applications need to be run through the java runtime
@@ -14,7 +17,7 @@ public class Program {
 
     public static void main(String args[]) {
         String result;
-        System.out.println("Welcome to the Movie Store");
+        System.out.println("Welcome to the de.fstraub.refactoring.fowler.Movie Store");
         Movie m1 = new Movie("movie1", 1);
         Movie m2 = new Movie("movie2", 2);
         Rental r1 = new Rental(m1, 10);
